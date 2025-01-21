@@ -14,6 +14,10 @@ const main = () => {
         
         const li = document.createElement("li")
         li.innerText = todo
+        // Configurando eliminacion dado click
+        li.addEventListener("click", ()=> {
+            ul?.removeChild(li)
+        } )
 
         ul?.appendChild(li);
         
