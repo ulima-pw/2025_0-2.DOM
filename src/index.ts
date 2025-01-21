@@ -6,7 +6,7 @@ const main = () => {
         //1. Obtener el texto del input
         const input = document.getElementById("todo_text")
         if (input == null) return
-        const todo = input?.nodeValue
+        const todo = (input as HTMLInputElement).value
         console.log("click", todo)
         if (todo == null) return
         //2. Agregarlo como hijo del ul
@@ -15,7 +15,9 @@ const main = () => {
         const li = document.createElement("li")
         li.innerText = todo
 
-        ul?.appendChild(li)
+        ul?.appendChild(li);
+        
+        (input as HTMLInputElement).value = ""
     })
 }
 
